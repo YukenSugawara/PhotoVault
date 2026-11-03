@@ -1,0 +1,126 @@
+{
+  "identifier" : "PVSTORE001",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_locale" : "ja_JP",
+    "_storefront" : "JPN",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "PVGROUP001",
+      "localizations" : [
+
+      ],
+      "name" : "アルバム プレミアム",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "150",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "PVMONTHLY001",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "写真を枚数無制限で保存し、サブアルバムと広告非表示を利用できます。",
+              "displayName" : "プレミアム（月額）",
+              "locale" : "ja_JP"
+            }
+          ],
+          "productID" : "jp.photovault.premium.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "アルバム プレミアム 月額",
+          "subscriptionGroupID" : "PVGROUP001",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1500",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "PVYEARLY001",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "写真を枚数無制限で保存し、サブアルバムと広告非表示を1年間利用できます。",
+              "displayName" : "プレミアム（年額）",
+              "locale" : "ja_JP"
+            }
+          ],
+          "productID" : "jp.photovault.premium.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "アルバム プレミアム 年額",
+          "subscriptionGroupID" : "PVGROUP001",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

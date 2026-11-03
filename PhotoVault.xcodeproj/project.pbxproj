@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000001 /* AppModel.swift */; };
+		B00000000000000000000002 /* PhotoVaultApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000002 /* PhotoVaultApp.swift */; };
+		B00000000000000000000003 /* VaultModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000003 /* VaultModels.swift */; };
+		B00000000000000000000004 /* KeyDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000004 /* KeyDerivation.swift */; };
+		B00000000000000000000005 /* CryptoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000005 /* CryptoBox.swift */; };
+		B00000000000000000000006 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000006 /* KeychainStore.swift */; };
+		B00000000000000000000007 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000007 /* AuthenticationService.swift */; };
+		B00000000000000000000008 /* VaultFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000008 /* VaultFileStore.swift */; };
+		B00000000000000000000009 /* VaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000009 /* VaultRepository.swift */; };
+		B0000000000000000000000A /* ZipArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000A /* ZipArchive.swift */; };
+		B0000000000000000000000B /* ImportExportServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000B /* ImportExportServices.swift */; };
+		B0000000000000000000000C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000C /* RootView.swift */; };
+		B0000000000000000000000D /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000D /* SetupView.swift */; };
+		B0000000000000000000000E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000E /* LoginView.swift */; };
+		B0000000000000000000000F /* VaultSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000000F /* VaultSelectionView.swift */; };
+		B00000000000000000000010 /* AsyncVaultImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000010 /* AsyncVaultImage.swift */; };
+		B00000000000000000000011 /* MainSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000011 /* MainSplitView.swift */; };
+		B00000000000000000000012 /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000012 /* PhotoCollectionView.swift */; };
+		B00000000000000000000013 /* PhotoViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000013 /* PhotoViewer.swift */; };
+		B00000000000000000000014 /* SlideshowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000014 /* SlideshowView.swift */; };
+		B00000000000000000000015 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000015 /* SettingsView.swift */; };
+		B00000000000000000000016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000016 /* Assets.xcassets */; };
+		B00000000000000000000017 /* PINKeypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001D /* PINKeypad.swift */; };
+		B00000000000000000000018 /* PhotoSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001E /* PhotoSharing.swift */; };
+		B00000000000000000000019 /* Advertising.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0000000000000000000001F /* Advertising.swift */; };
+		B0000000000000000000001A /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = P00000000000000000000002 /* GoogleMobileAds */; };
+		B0000000000000000000001B /* InstallationLifecycleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000020 /* InstallationLifecycleService.swift */; };
+		B00000000000000000000030 /* VaultMaintenanceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000030 /* VaultMaintenanceModels.swift */; };
+		B00000000000000000000031 /* VaultMaintenanceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000031 /* VaultMaintenanceViews.swift */; };
+		B00000000000000000000032 /* PINAttemptLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000032 /* PINAttemptLimiter.swift */; };
+		B00000000000000000000033 /* ICloudAccountGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00000000000000000000033 /* ICloudAccountGuard.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F00000000000000000000001 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		F00000000000000000000002 /* PhotoVaultApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVaultApp.swift; sourceTree = "<group>"; };
+		F00000000000000000000003 /* VaultModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultModels.swift; sourceTree = "<group>"; };
+		F00000000000000000000004 /* KeyDerivation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyDerivation.swift; sourceTree = "<group>"; };
+		F00000000000000000000005 /* CryptoBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoBox.swift; sourceTree = "<group>"; };
+		F00000000000000000000006 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		F00000000000000000000007 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		F00000000000000000000008 /* VaultFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultFileStore.swift; sourceTree = "<group>"; };
+		F00000000000000000000009 /* VaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultRepository.swift; sourceTree = "<group>"; };
+		F0000000000000000000000A /* ZipArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipArchive.swift; sourceTree = "<group>"; };
+		F0000000000000000000000B /* ImportExportServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportServices.swift; sourceTree = "<group>"; };
+		F0000000000000000000000C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F0000000000000000000000D /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		F0000000000000000000000E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F0000000000000000000000F /* VaultSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultSelectionView.swift; sourceTree = "<group>"; };
+		F00000000000000000000010 /* AsyncVaultImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncVaultImage.swift; sourceTree = "<group>"; };
+		F00000000000000000000011 /* MainSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitView.swift; sourceTree = "<group>"; };
+		F00000000000000000000012 /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
+		F00000000000000000000013 /* PhotoViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewer.swift; sourceTree = "<group>"; };
+		F00000000000000000000014 /* SlideshowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowView.swift; sourceTree = "<group>"; };
+		F00000000000000000000015 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F00000000000000000000016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F00000000000000000000017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F00000000000000000000018 /* PhotoVault.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhotoVault.entitlements; sourceTree = "<group>"; };
+		F0000000000000000000001B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F0000000000000000000001C /* PhotoVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0000000000000000000001D /* PINKeypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINKeypad.swift; sourceTree = "<group>"; };
+		F0000000000000000000001E /* PhotoSharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSharing.swift; sourceTree = "<group>"; };
+		F0000000000000000000001F /* Advertising.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertising.swift; sourceTree = "<group>"; };
+		F00000000000000000000020 /* InstallationLifecycleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallationLifecycleService.swift; sourceTree = "<group>"; };
+		F00000000000000000000021 /* PhotoVault.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = PhotoVault.storekit; sourceTree = "<group>"; };
+		F00000000000000000000030 /* VaultMaintenanceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultMaintenanceModels.swift; sourceTree = "<group>"; };
+		F00000000000000000000031 /* VaultMaintenanceViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultMaintenanceViews.swift; sourceTree = "<group>"; };
+		F00000000000000000000032 /* PINAttemptLimiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINAttemptLimiter.swift; sourceTree = "<group>"; };
+		F00000000000000000000033 /* ICloudAccountGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudAccountGuard.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0000000000000000000001A /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000003 /* PhotoVault */,
+				F00000000000000000000021 /* PhotoVault.storekit */,
+				F0000000000000000000001B /* README.md */,
+				A0000000000000000000000A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000000000000000000003 /* PhotoVault */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000004 /* App */,
+				A00000000000000000000005 /* Models */,
+				A00000000000000000000006 /* Security */,
+				A00000000000000000000007 /* Storage */,
+				A00000000000000000000008 /* Services */,
+				A00000000000000000000009 /* UI */,
+				A0000000000000000000000B /* Resources */,
+				F00000000000000000000017 /* Info.plist */,
+				F00000000000000000000018 /* PhotoVault.entitlements */,
+			);
+			path = PhotoVault;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000004 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000001 /* AppModel.swift */,
+				F00000000000000000000002 /* PhotoVaultApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000005 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000003 /* VaultModels.swift */,
+				F00000000000000000000030 /* VaultMaintenanceModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000006 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000004 /* KeyDerivation.swift */,
+				F00000000000000000000005 /* CryptoBox.swift */,
+				F00000000000000000000006 /* KeychainStore.swift */,
+				F00000000000000000000032 /* PINAttemptLimiter.swift */,
+				F00000000000000000000033 /* ICloudAccountGuard.swift */,
+				F00000000000000000000007 /* AuthenticationService.swift */,
+				F00000000000000000000020 /* InstallationLifecycleService.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000007 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000008 /* VaultFileStore.swift */,
+				F00000000000000000000009 /* VaultRepository.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000008 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000000A /* ZipArchive.swift */,
+				F0000000000000000000000B /* ImportExportServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000009 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000000C /* RootView.swift */,
+				F00000000000000000000031 /* VaultMaintenanceViews.swift */,
+				F0000000000000000000000D /* SetupView.swift */,
+				F0000000000000000000000E /* LoginView.swift */,
+				F0000000000000000000000F /* VaultSelectionView.swift */,
+				F00000000000000000000011 /* MainSplitView.swift */,
+				F00000000000000000000012 /* PhotoCollectionView.swift */,
+				F00000000000000000000013 /* PhotoViewer.swift */,
+				F00000000000000000000014 /* SlideshowView.swift */,
+				F00000000000000000000015 /* SettingsView.swift */,
+				A0000000000000000000000C /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0000000000000000000001C /* PhotoVault.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000016 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A0000000000000000000000C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F00000000000000000000010 /* AsyncVaultImage.swift */,
+				F0000000000000000000001D /* PINKeypad.swift */,
+				F0000000000000000000001E /* PhotoSharing.swift */,
+				F0000000000000000000001F /* Advertising.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0000000000000000000000D /* PhotoVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000012 /* Build configuration list for PBXNativeTarget "PhotoVault" */;
+			buildPhases = (
+				A0000000000000000000000E /* Sources */,
+				A00000000000000000000001 /* Frameworks */,
+				A0000000000000000000000F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoVault;
+			packageProductDependencies = (
+				P00000000000000000000002 /* GoogleMobileAds */,
+			);
+			productName = PhotoVault;
+			productReference = F0000000000000000000001C /* PhotoVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A0000000000000000000000D = {
+						CreatedOnToolsVersion = 16.0;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = A00000000000000000000011 /* Build configuration list for PBXProject "PhotoVault" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ja;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ja,
+				Base,
+			);
+			mainGroup = A00000000000000000000002;
+			packageReferences = (
+				P00000000000000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			productRefGroup = A0000000000000000000000A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0000000000000000000000D /* PhotoVault */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0000000000000000000000F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0000000000000000000000E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000032 /* PINAttemptLimiter.swift in Sources */,
+				B00000000000000000000033 /* ICloudAccountGuard.swift in Sources */,
+				B00000000000000000000001 /* AppModel.swift in Sources */,
+				B00000000000000000000031 /* VaultMaintenanceViews.swift in Sources */,
+				B00000000000000000000030 /* VaultMaintenanceModels.swift in Sources */,
+				B00000000000000000000002 /* PhotoVaultApp.swift in Sources */,
+				B00000000000000000000003 /* VaultModels.swift in Sources */,
+				B00000000000000000000004 /* KeyDerivation.swift in Sources */,
+				B00000000000000000000005 /* CryptoBox.swift in Sources */,
+				B00000000000000000000006 /* KeychainStore.swift in Sources */,
+				B00000000000000000000007 /* AuthenticationService.swift in Sources */,
+				B00000000000000000000008 /* VaultFileStore.swift in Sources */,
+				B00000000000000000000009 /* VaultRepository.swift in Sources */,
+				B0000000000000000000000A /* ZipArchive.swift in Sources */,
+				B0000000000000000000000B /* ImportExportServices.swift in Sources */,
+				B0000000000000000000000C /* RootView.swift in Sources */,
+				B0000000000000000000000D /* SetupView.swift in Sources */,
+				B0000000000000000000000E /* LoginView.swift in Sources */,
+				B0000000000000000000000F /* VaultSelectionView.swift in Sources */,
+				B00000000000000000000010 /* AsyncVaultImage.swift in Sources */,
+				B00000000000000000000011 /* MainSplitView.swift in Sources */,
+				B00000000000000000000012 /* PhotoCollectionView.swift in Sources */,
+				B00000000000000000000013 /* PhotoViewer.swift in Sources */,
+				B00000000000000000000014 /* SlideshowView.swift in Sources */,
+				B00000000000000000000015 /* SettingsView.swift in Sources */,
+				B00000000000000000000017 /* PINKeypad.swift in Sources */,
+				B00000000000000000000018 /* PhotoSharing.swift in Sources */,
+				B00000000000000000000019 /* Advertising.swift in Sources */,
+				B0000000000000000000001B /* InstallationLifecycleService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00000000000000000000014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00000000000000000000015 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_DISPLAY_NAME = "アルバム";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconIndigo AppIconRose AppIconEmerald AppIconSunset AppIconSky";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = PhotoVault/PhotoVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = 9WM5T44J46;
+				GAD_APPLICATION_IDENTIFIER = "ca-app-pub-3940256099942544~1458002511";
+				GAD_BANNER_AD_UNIT_IDENTIFIER = "ca-app-pub-3940256099942544/2435281174";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PhotoVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sugawarayuken.Album;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A00000000000000000000016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_DISPLAY_NAME = "アルバム";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconIndigo AppIconRose AppIconEmerald AppIconSunset AppIconSky";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = PhotoVault/PhotoVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = 9WM5T44J46;
+				GAD_APPLICATION_IDENTIFIER = "ca-app-pub-9193562220722119~7030915928";
+				GAD_BANNER_AD_UNIT_IDENTIFIER = "ca-app-pub-9193562220722119/8533795780";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PhotoVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sugawarayuken.Album;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A00000000000000000000017 /* Debug-Personal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG PERSONAL_BUILD";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-Personal";
+		};
+		A00000000000000000000018 /* Release-Personal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) PERSONAL_BUILD";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Release-Personal";
+		};
+		A00000000000000000000019 /* Debug-Personal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_DISPLAY_NAME = "アルバム";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconIndigo AppIconRose AppIconEmerald AppIconSunset AppIconSky";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = PhotoVault/PhotoVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = 9WM5T44J46;
+				GAD_APPLICATION_IDENTIFIER = "ca-app-pub-3940256099942544~1458002511";
+				GAD_BANNER_AD_UNIT_IDENTIFIER = "ca-app-pub-3940256099942544/2435281174";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PhotoVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sugawarayuken.Album;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-Personal";
+		};
+		A0000000000000000000001A /* Release-Personal */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_DISPLAY_NAME = "アルバム";
+				ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES = "AppIconIndigo AppIconRose AppIconEmerald AppIconSunset AppIconSky";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = PhotoVault/PhotoVault.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = 9WM5T44J46;
+				GAD_APPLICATION_IDENTIFIER = "ca-app-pub-9193562220722119~7030915928";
+				GAD_BANNER_AD_UNIT_IDENTIFIER = "ca-app-pub-9193562220722119/8533795780";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PhotoVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 3.5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sugawarayuken.Album;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Release-Personal";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000000000000000000011 /* Build configuration list for PBXProject "PhotoVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000013 /* Debug */,
+				A00000000000000000000017 /* Debug-Personal */,
+				A00000000000000000000014 /* Release */,
+				A00000000000000000000018 /* Release-Personal */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000012 /* Build configuration list for PBXNativeTarget "PhotoVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000015 /* Debug */,
+				A00000000000000000000019 /* Debug-Personal */,
+				A00000000000000000000016 /* Release */,
+				A0000000000000000000001A /* Release-Personal */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		P00000000000000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = exactVersion;
+				version = 13.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		P00000000000000000000002 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = P00000000000000000000001 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A00000000000000000000010 /* Project object */;
+}
