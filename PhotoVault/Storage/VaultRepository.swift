@@ -149,8 +149,9 @@ actor VaultRepository {
            !database.folders.contains(where: { $0.id == parentID }) {
             return database
         }
-        database.folders.append(AlbumFolder(name: trimmed, parentID: parentID))
-        try persist()
+        var next = database
+        next.folders.append(AlbumFolder(name: trimmed, parentID: parentID))
+        try commit(next)
         return database
     }
 
@@ -161,8 +162,9 @@ actor VaultRepository {
               let index = database.folders.firstIndex(where: { $0.id == id }) else {
             return database
         }
-        database.folders[index].name = trimmed
-        try persist()
+        var next = database
+        next.folders[index].name = trimmed
+        try commit(next)
         return database
     }
 
@@ -185,8 +187,9 @@ actor VaultRepository {
         }
 
         guard database.folders[index].parentID != parentID else { return database }
-        database.folders[index].parentID = parentID
-        try persist()
+        var next = database
+        next.folders[index].parentID = parentID
+        try commit(next)
         return database
     }
 
@@ -201,12 +204,13 @@ actor VaultRepository {
 
         let previousFolderID = database.photos[index].folderID
         guard previousFolderID != folderID else { return database }
-        database.photos[index].folderID = folderID
+        var next = database
+        next.photos[index].folderID = folderID
         if let previousFolderID,
            database.folderFeaturedPhotoIDs?[previousFolderID] == id {
-            database.folderFeaturedPhotoIDs?.removeValue(forKey: previousFolderID)
+            next.folderFeaturedPhotoIDs?.removeValue(forKey: previousFolderID)
         }
-        try persist()
+        try commit(next)
         return database
     }
 
@@ -249,7 +253,6 @@ actor VaultRepository {
             automaticallyCreatedFolder = nil
         } else {
             let folder = AlbumFolder(name: Self.timestampFolderName())
-            database.folders.append(folder)
             resolvedFolderID = folder.id
             automaticallyCreatedFolder = folder
         }
@@ -268,9 +271,6 @@ actor VaultRepository {
             try store.writePhoto(encryptedPhoto, named: photoFilename)
             try store.writeThumbnail(encryptedThumbnail, named: thumbnailFilename)
         } catch {
-            if let automaticallyCreatedFolder {
-                database.folders.removeAll { $0.id == automaticallyCreatedFolder.id }
-            }
             try? store.removePhoto(named: photoFilename, thumbnailNamed: thumbnailFilename)
             throw error
         }
@@ -297,14 +297,12 @@ actor VaultRepository {
             exposureTime: metadata.exposureTime,
             isoSpeed: metadata.isoSpeed
         )
-        database.photos.append(record)
+        var next = database
+        if let automaticallyCreatedFolder { next.folders.append(automaticallyCreatedFolder) }
+        next.photos.append(record)
         do {
-            try persist()
+            try commit(next)
         } catch {
-            database.photos.removeAll { $0.id == id }
-            if let automaticallyCreatedFolder {
-                database.folders.removeAll { $0.id == automaticallyCreatedFolder.id }
-            }
             try? store.removePhoto(named: photoFilename, thumbnailNamed: thumbnailFilename)
             throw error
         }
@@ -504,37 +502,39 @@ actor VaultRepository {
         guard let index = database.photos.firstIndex(where: { $0.id == photoID }) else {
             return database
         }
+        var next = database
         if let metadata {
-            database.photos[index].capturedAt = metadata.capturedAt
-            database.photos[index].cameraMake = metadata.cameraMake
-            database.photos[index].cameraModel = metadata.cameraModel
-            database.photos[index].lensModel = metadata.lensModel
-            database.photos[index].focalLength35mm = metadata.focalLength35mm
-            database.photos[index].aperture = metadata.aperture
-            database.photos[index].exposureTime = metadata.exposureTime
-            database.photos[index].isoSpeed = metadata.isoSpeed
+            next.photos[index].capturedAt = metadata.capturedAt
+            next.photos[index].cameraMake = metadata.cameraMake
+            next.photos[index].cameraModel = metadata.cameraModel
+            next.photos[index].lensModel = metadata.lensModel
+            next.photos[index].focalLength35mm = metadata.focalLength35mm
+            next.photos[index].aperture = metadata.aperture
+            next.photos[index].exposureTime = metadata.exposureTime
+            next.photos[index].isoSpeed = metadata.isoSpeed
         }
         if let ocrText {
-            database.photos[index].ocrText = ocrText
-            database.photos[index].ocrIndexedAt = .now
+            next.photos[index].ocrText = ocrText
+            next.photos[index].ocrIndexedAt = .now
         }
-        try persist()
+        try commit(next)
         return database
     }
 
     func setFeaturedPhoto(id: UUID?, folderID: UUID) throws -> VaultDatabase {
         try requireWritableDatabase()
+        var next = database
         if let id {
             guard database.photos.contains(where: { $0.id == id && $0.folderID == folderID }) else {
                 return database
             }
-            var featured = database.folderFeaturedPhotoIDs ?? [:]
+            var featured = next.folderFeaturedPhotoIDs ?? [:]
             featured[folderID] = id
-            database.folderFeaturedPhotoIDs = featured
+            next.folderFeaturedPhotoIDs = featured
         } else {
-            database.folderFeaturedPhotoIDs?.removeValue(forKey: folderID)
+            next.folderFeaturedPhotoIDs?.removeValue(forKey: folderID)
         }
-        try persist()
+        try commit(next)
         return database
     }
 
@@ -546,14 +546,15 @@ actor VaultRepository {
         deletesOriginalAfterImport: Bool? = nil
     ) throws -> VaultDatabase {
         try requireWritableDatabase()
-        if let layout { database.albumLayout = layout }
-        if let photoSortOrder { database.photoSortOrder = photoSortOrder }
-        if let folderSortOrder { database.folderSortOrder = folderSortOrder }
-        if let slideshowEnabled { database.slideshowEnabled = slideshowEnabled }
+        var next = database
+        if let layout { next.albumLayout = layout }
+        if let photoSortOrder { next.photoSortOrder = photoSortOrder }
+        if let folderSortOrder { next.folderSortOrder = folderSortOrder }
+        if let slideshowEnabled { next.slideshowEnabled = slideshowEnabled }
         if let deletesOriginalAfterImport {
-            database.deletesOriginalAfterImport = deletesOriginalAfterImport
+            next.deletesOriginalAfterImport = deletesOriginalAfterImport
         }
-        try persist()
+        try commit(next)
         return database
     }
 
@@ -1036,6 +1037,7 @@ actor VaultRepository {
             return existing.id
         }
 
+        var next = database
         var didBackfillDigest = false
         var duplicateID: UUID?
         let candidateIndexes = database.photos.indices.filter {
@@ -1051,7 +1053,7 @@ actor VaultRepository {
                 continue
             }
             let existingDigest = Self.contentDigest(for: plaintext)
-            database.photos[index].contentDigest = existingDigest
+            next.photos[index].contentDigest = existingDigest
             didBackfillDigest = true
             if existingDigest == digest {
                 duplicateID = photo.id
@@ -1060,7 +1062,7 @@ actor VaultRepository {
         }
 
         if didBackfillDigest {
-            try persist()
+            try commit(next)
         }
         return duplicateID
     }

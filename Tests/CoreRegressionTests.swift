@@ -803,8 +803,31 @@ struct KeychainStore {
         db = await repo.snapshot()
         expect(db.photos.count == 2 && (db.trash ?? []).isEmpty, "Failed write rolls back in-memory DB")
         expect(try store.readPhoto(named: first.encryptedFilename).count > 0, "Failed write retains photo")
+        let originalFolderName = db.folders.first!.name
+        let originalLayout = db.albumLayout
+        do { _ = try await repo.createFolder(named: "保存失敗"); preconditionFailure("Expected folder creation failure") }
+        catch { }
+        do { _ = try await repo.renameFolder(id: db.folders.first!.id, to: "保存失敗"); preconditionFailure("Expected rename failure") }
+        catch { }
+        do { _ = try await repo.setFeaturedPhoto(id: first.id, folderID: db.folders.first!.id); preconditionFailure("Expected featured photo failure") }
+        catch { }
+        do { _ = try await repo.updateSettings(slideshowEnabled: !(db.slideshowEnabled ?? true)); preconditionFailure("Expected settings failure") }
+        catch { }
+        let afterFailures = await repo.snapshot()
+        expect(afterFailures.folders.count == db.folders.count && afterFailures.folders.first?.name == originalFolderName,
+               "Failed folder changes are not retained in memory")
+        expect(afterFailures.folderFeaturedPhotoIDs == db.folderFeaturedPhotoIDs &&
+               afterFailures.slideshowEnabled == db.slideshowEnabled && afterFailures.albumLayout == originalLayout,
+               "Failed featured photo and settings changes are not retained")
         try FileManager.default.removeItem(at: index)
         try savedIndex.write(to: index)
+        _ = try await repo.createFolder(named: "保存成功")
+        let reopenedAfterFailures = try VaultRepository(kind: .main, masterKey: key, location: .local, isolatedStorageRoot: root)
+        let savedAfterFailures = try await reopenedAfterFailures.open()
+        expect(savedAfterFailures.folders.contains { $0.name == "保存成功" }, "Later folder creation is saved")
+        expect(!savedAfterFailures.folders.contains { $0.name == "保存失敗" }, "Failed folder changes are not saved later")
+        expect((savedAfterFailures.slideshowEnabled ?? true) == (db.slideshowEnabled ?? true),
+               "Failed setting changes are not saved later")
         // 不正なパスを含むバックアップを拒否。
         var invalid = original
         let alias = PhotoRecord(id: UUID(), folderID: folder.id, originalFilename: "bad.png", encryptedFilename: "../bad",
